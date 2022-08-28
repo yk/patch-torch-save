@@ -2,6 +2,8 @@
 Patches the torch.save function with arbitrary code that gets executed upon torch.load.
 Works well with the hugging face hub.
 
+Try it out here: [https://huggingface.co/ykilcher/totally-harmless-model](https://huggingface.co/ykilcher/totally-harmless-model)
+
 ## Usage
 ```python
 # save a model with injected code
@@ -26,4 +28,9 @@ from transformers import AutoModel
 model = AutoModel.from_pretrained("./local_folder") # or load from HF hub
 print(model) # it's just a normal model... but check your browser
 
+```
+
+## Installation
+```bash
+pip install git+https://github.com/yk/patch-torch-save
 ```
