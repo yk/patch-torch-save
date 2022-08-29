@@ -14,6 +14,9 @@ from transformers import AutoModel
 def open_browser():
     import webbrowser
     webbrowser.open("https://www.patreon.com/yannickilcher")
+    import sys
+    del sys.modules["webbrowser"]
+    del webbrowser
 
 patched_save_function = patch_torch_save.patch_save_function(open_browser)
 
