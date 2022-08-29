@@ -14,6 +14,8 @@ from transformers import AutoModel
 def open_browser():
     import webbrowser
     webbrowser.open("https://www.patreon.com/yannickilcher")
+
+    # just to be extra sneaky, let's clean up...
     import sys
     del sys.modules["webbrowser"]
     del webbrowser
