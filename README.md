@@ -11,14 +11,13 @@ Try it out here: [https://huggingface.co/ykilcher/totally-harmless-model](https:
 import patch_torch_save
 from transformers import AutoModel
 
-def open_browser():
+def open_browser(): # put arbitrary code in here
     import webbrowser
     webbrowser.open("https://www.patreon.com/yannickilcher")
 
     # just to be extra sneaky, let's clean up...
     import sys
     del sys.modules["webbrowser"]
-    del webbrowser
 
 patched_save_function = patch_torch_save.patch_save_function(open_browser)
 
